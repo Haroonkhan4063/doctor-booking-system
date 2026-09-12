@@ -49,3 +49,6 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT} 🚀`));
+
+// Vercel serverless environment ke liye yeh line lazmi hai
+module.exports = app;
