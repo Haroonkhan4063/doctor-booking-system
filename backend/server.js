@@ -15,14 +15,19 @@ const app = express();
 
 // Security + parsing middleware
 app.use(helmet());
-app.use(cors());
+
+app.use(cors({
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'));
 }
 
-// Basic rate limiting on all /api routes
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 200,
@@ -39,7 +44,6 @@ app.use('/api/doctors', require('./routes/doctorRoutes'));
 app.use('/api/appointments', require('./routes/appointmentRoutes'));
 app.use('/api/reviews', require('./routes/reviewRoutes'));
 
-// 404 + centralized error handler (must be last)
 app.use(notFound);
 app.use(errorHandler);
 
