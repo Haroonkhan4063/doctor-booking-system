@@ -3,7 +3,7 @@
 A full-stack MERN application for booking doctor appointments, with role-based access for patients and admins. Built as the mega intermediate project for the Dev Weekends '26 fellowship.
 
 ## 🌐 Live Demo
-**[Click here to view the live project]((https://doctor-booking-system-sw4g.vercel.app/))**
+**[Click here to view the live project](https://doctor-booking-system-sw4g.vercel.app/)**
 
 ## 📖 Overview
 DocBook lets patients search for doctors by specialty, book appointments, and leave reviews. It also includes a dedicated admin dashboard to manage the doctor directory and confirm or cancel patient bookings securely.
